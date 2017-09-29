@@ -20,6 +20,9 @@ int main(void){
 	return 0;
 }
 
+
+//Input function, will promp the user for a number and repeatedly ask for it while checking to see if its an odd
+//number between 1 and 9
 int get_input(void){
 	int true;
 	do{
@@ -48,20 +51,26 @@ int is_valid(int x){
 
 }
 
-//This function will do the printing of the stuff
+//This function will take in the users choice, and print out the diamond, printing out the blank spaces using %*s
+//before it starts printing out numbers on each line
 void print_pattern(int in){
 	int i, j, k, l;
+	//This for loop should take care of the lines that lead up to the center row as well as print out the center row
 	for(i = 1; i = in; i+=2){
+		//first print out the blank spaces before the row
 		printf("%*s", in-i, "");
+		//then print out the digits that will be in the current row
 		for(j = 1; j = i; j++){
 			printf("%d", j);
 			printf(" ");
 		}
 		printf("\n");
 	}	
-
+	//repeate for decending in size rows that follow the center row
 	for(k = in-2; k = 1; k-=2){
+		//print out the blank spaces
 		printf("%*s", in-k, "");
+		//print out the digits
 		for(l = 1; l = k; l++){
 			printf("%d", l);
 			printf(" ");
